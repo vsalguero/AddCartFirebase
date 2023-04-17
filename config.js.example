@@ -1,0 +1,2 @@
+export const projectId = "projectID";
+export const databaseUrl = "https://project-rtdb.firebaseio.com/";
