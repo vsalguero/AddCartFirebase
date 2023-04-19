@@ -17,8 +17,10 @@ const shoppingListEl = document.getElementById("shopping-list");
 
 addButtonEl.addEventListener("click", function () {
     let inputValue = inputFieldEl.value;
-    push(shoppingListInDB, inputValue);
-    clearInputFieldEl();
+    if (inputValue.length > 0) {
+        //push(shoppingListInDB, inputValue);
+        clearInputFieldEl();
+    }
 });
 
 onValue(shoppingListInDB, function (snapshot) {
@@ -34,7 +36,7 @@ onValue(shoppingListInDB, function (snapshot) {
             let currentItemValue = currentValue[1];
             appendItemToShoppingListEl(currentValue);
         }
-    }else{
+    } else {
         shoppingListEl.innerHTML = "No items here... yet";
     }
 
